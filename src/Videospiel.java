@@ -87,10 +87,10 @@ public class Videospiel implements Medium
     }
 
 	@Override
-	public String getFormatiertenString()
+	public String getFormatiertenString() //major change
 	{
-		return 	_videospiel.getTitel() + " " + 
-				_videospiel.getKommentar() + " " +
+		return 	_videospiel.getTitel() + " - " + 
+				_videospiel.getKommentar() + " - " +
 				_videospiel.getSystem();
 	}
 

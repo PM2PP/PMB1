@@ -218,8 +218,7 @@ class MedienEinleser
 			break;
 		}
 		return medium;
-	}
-
+	} //test
 	/**
 	 * Holt das nächste Token vom Tokenizer und dekodiert es.
 	 * 

@@ -197,8 +197,7 @@ class MedienEinleser
 			medium = new Videospiel(titel, kommentar, system);
 		}
 		return medium;
-	}
-
+	} //test
 	/**
 	 * Holt das nächste Token vom Tokenizer und dekodiert es.
 	 * 

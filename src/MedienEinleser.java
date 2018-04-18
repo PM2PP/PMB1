@@ -177,24 +177,45 @@ class MedienEinleser
 		String kommentar = naechsterToken(tokenizer);
 
 		Medium medium = null;
-		if (medienBezeichnung.equals("CD"))
+//		if (medienBezeichnung.equals("CD"))
+//		{
+//			String interpret = naechsterToken(tokenizer); 
+//			String spiellaenge = naechsterToken(tokenizer);
+//
+//			medium = new CD(titel, kommentar, interpret, Integer.parseInt(spiellaenge));
+//		}
+//		else if (medienBezeichnung.equals("DVD"))
+//		{
+//			String regisseur = naechsterToken(tokenizer);
+//			int laufzeit = Integer.valueOf(naechsterToken(tokenizer));
+//
+//			medium = new DVD(titel, kommentar, regisseur, laufzeit);
+//		}
+//		else if (medienBezeichnung.equals("Videospiel"))
+//		{
+//			String system = naechsterToken(tokenizer);
+//			medium = new Videospiel(titel, kommentar, system);
+//		}
+//		return medium;
+	//}
+		switch(medienBezeichnung)
 		{
-			String interpret = naechsterToken(tokenizer); 
+		case("CD"):
+		String interpret = naechsterToken(tokenizer); 
 			String spiellaenge = naechsterToken(tokenizer);
 
 			medium = new CD(titel, kommentar, interpret, Integer.parseInt(spiellaenge));
-		}
-		else if (medienBezeichnung.equals("DVD"))
-		{
+			break;
+		case("DVD"):
 			String regisseur = naechsterToken(tokenizer);
 			int laufzeit = Integer.valueOf(naechsterToken(tokenizer));
 
 			medium = new DVD(titel, kommentar, regisseur, laufzeit);
-		}
-		else if (medienBezeichnung.equals("Videospiel"))
-		{
+			break;
+		case("Videospiel"):
 			String system = naechsterToken(tokenizer);
 			medium = new Videospiel(titel, kommentar, system);
+			break;
 		}
 		return medium;
 	}

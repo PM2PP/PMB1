@@ -137,14 +137,14 @@ class VerleihServiceImpl extends AbstractObservableService implements VerleihSer
 		assert sindAlleNichtVerliehen(medien) : "Vorbedingung verletzt: sindAlleNichtVerliehen(medien)";
 		assert ausleihDatum != null : "Vorbedingung verletzt: ausleihDatum != null";
 
-		Verleihkarte karte;
 		for (Medium medium : medien)
 		{
-			karte = new Verleihkarte(kunde, medium, ausleihDatum);
+			Verleihkarte karte = new Verleihkarte(kunde, medium, ausleihDatum);
 			_verleihkarten.put(medium, karte);
 		}
-
 		informiereUeberAenderung();
+
+		
 	}
 
 	@Override

@@ -110,10 +110,10 @@ class CD implements Medium
     @Override
     public String getFormatiertenString()
     {
-    	return 	_cd.getInterpret() + " " +
-    			_cd.getTitel() + " " + 
-    			_cd.getKommentar() + " " + 
-    			_cd.getSpiellaenge() ;
+    	return 	_cd.getInterpret() + " - " +
+    			_cd.getTitel() + " - " + 
+    			_cd.getKommentar() + " - " + 
+    			_cd.getSpiellaenge() + "min";
     }
     
 

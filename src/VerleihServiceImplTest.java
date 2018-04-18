@@ -60,15 +60,15 @@ public class VerleihServiceImplTest
 		}
 	}
 
-	@Test
-	public void testVerleiheAnKunden()
-	{
-		for (Kunde kunden : _kundenstamm.getKunden())
-		{
-			_verleihService.verleiheAn(kunden, _medienbestand.getMedien(), Datum.heute());
-			assertFalse(_verleihService.istVerleihenMoeglich(kunden, _medienbestand.getMedien()));
-		}
-	}
+//	@Test
+//	public void testVerleiheAnKunden()
+//	{
+//		for (Kunde kunden : _kundenstamm.getKunden())
+//		{
+//			_verleihService.verleiheAn(kunden, _medienbestand.getMedien(), Datum.heute());
+//			assertFalse(_verleihService.istVerleihenMoeglich(kunden, _medienbestand.getMedien()));
+//		}
+//	}
 
 	@Test
 	public void testNehmeZurueck()
@@ -82,8 +82,24 @@ public class VerleihServiceImplTest
 	}
 
 	@Test
-	public void testNochEinTestFall3()
+	public void testVerleiheAnKunden2()
 	{
+		_verleihService.verleiheAn(_homer, _medienbestand.getMedien(), Datum.heute());
+		for (Medium medium : _medienbestand.getMedien())
+		{
+			assertTrue(_verleihService.istVerliehen(medium));		
+		}
+	}
+	
+	@Test
+	public void testNehmeZurueck2()
+	{
+		for (Medium medium : _medienbestand.getMedien())
+		{
+			_verleihService.verleiheAn(_homer, _medienbestand.getMedien(), Datum.heute());
+			_verleihService.nimmZurueck(_medienbestand.getMedien(), Datum.heute());
+			assertFalse(_verleihService.istVerliehen(medium));		
+		}
 	}
 
 	private void setUpKunden()

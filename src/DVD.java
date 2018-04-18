@@ -109,14 +109,15 @@ class DVD implements Medium
     {
         return _titel;
     }
-
+    
+    
 	@Override
 	public String getFormatiertenString()
 	{ 
-		return 	_dvd.getRegisseur() + " " + 
-				_dvd.getTitel() + " " + 
-				_dvd.getKommentar() + " " + 
-				_dvd.getLaufzeit() ;
+		return 	_dvd.getRegisseur() + " - " + 
+				_dvd.getTitel() + " - " + 
+				_dvd.getKommentar() + " - " + 
+				_dvd.getLaufzeit() + "min";
 	}
 
 }
